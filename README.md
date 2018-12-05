@@ -1,0 +1,2 @@
+# pattern_recognition_assignment_clustering
+Pattern recognition assignment: clustering algorithm
