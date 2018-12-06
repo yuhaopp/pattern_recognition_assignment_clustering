@@ -65,13 +65,13 @@ if __name__ == '__main__':
     pca = PCA(n_components=2)
     data = pca.fit_transform(k_means.data)
     plt.scatter(data[:, 0], data[:, 1], c=k_means.clustering_results[0])
-    plt.title('clustering result')
-    plt.savefig('clustering result')
+    plt.title('Clustering result: mobile prices')
+    plt.savefig('mobile prices')
     plt.clf()
 
     plt.scatter(data[:, 0], data[:, 1], c=labels_true)
-    plt.title('true result')
-    plt.savefig('true result')
+    plt.title('True classifications: mobile prices')
+    plt.savefig('true result mobile prices')
 
     score = metrics.adjusted_rand_score(labels_true, k_means.clustering_results[0])
     print(score)
