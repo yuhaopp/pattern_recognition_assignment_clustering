@@ -11,9 +11,10 @@ dist_matrix = np.sqrt(
 # calculate each point's new cluster
 clustering_results = np.array([dist_matrix.argmin(axis=1)])
 
-index_df = np.concatenate((a.T, b), axis=1)
+index_df = np.concatenate((a, b), axis=1)
 index_df = pd.DataFrame(index_df)
+t = index_df.iloc[:, 1:].values
 index_df.rename(columns={index_df.columns[0]: 'index'}, inplace=True)
-means = index_df.groupby('index').mean()
+means = index_df.groupby('index').mean().iloc[:, 1:].values
 
 print(means)
